@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Scraping With Mongoose</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet">
     <style>
       body { background-color: #F2F6D0 }
       #wrapper {
@@ -36,10 +38,46 @@
       }
     </style>
   </head>
-  <body>
+  <body class>
+    <nav class="navbar navbar-inverse">
+      ::before
+      <div class="container-fluid">
+        ::before
+        <div class="navbar-header">
+          ::before
+          <a class="navbar-brand" href="/">Mongo Scraper</a>
+          ::after
+        </div>
+        <ul class="nav navbar-nav">
+          ::before
+          <li class="active">
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/saved">Saved Articles</a>
+          </li>
+          <li>
+            <a class="btn btn-danger scrape-new">SCRAPE NEW ARTICLES!</a>
+          </li>
+          ::after
+        </ul>
+        ::after
+      </div>
+      ::after
+    </nav>
+    <div class="jumbotron text-center">
+      <div class="overlay">
+        </div>
+      <div class="background-image">
+        </div>
+      <div class="caption">
+        <h1>Mongo Scraper</h1>
+        <p>NY Times</p>
+      </div>
+    </div>
     <div id="wrapper">
-      <h1>Note Scraper</h1>
-      <h2><i>If you can do this...the homework should be no problem.</i></h2>
+      <!-- <h1>Note Scraper</h1>
+      <h2><i>If you can do this...the homework should be no problem.</i></h2> -->
       <div id="articles"></div>
       <div id="notes"></div>
     </div>
