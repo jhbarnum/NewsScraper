@@ -83,6 +83,7 @@ $(document).on("click", "#delete", function () {
   // Grab the id associated with the article from the submit button
   var thisId = $(this).attr("data-id");
   console.log("DELETED");
+  window.location.reload();
   // Run a POST request to change the note, using what's entered in the inputs
   $.ajax({
     method: "DELETE",
@@ -92,7 +93,7 @@ $(document).on("click", "#delete", function () {
    
     .then(function (data) {
       // Log the response
-      window.location.reload();
+      
      
       
       
