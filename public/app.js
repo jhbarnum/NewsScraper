@@ -13,9 +13,9 @@ $.getJSON("/articles", function(data) {
   }
   console.log(data)
 });
+                                     //db.places.remove({ "country": "Morocco" })
 
-
-// Whenever someone clicks a p tag
+// Whenever someone clicks a note button
 $(document).on("click", "#noteBtn", function() {
   // Empty the notes from the note section
   $("#notes").empty();
@@ -77,4 +77,31 @@ $(document).on("click", "#savenote", function() {
   // Also, remove the values entered in the input and textarea for note entry
   $("#titleinput").val("");
   $("#bodyinput").val("");
+});
+
+$(document).on("click", "#delete", function () {
+  // Grab the id associated with the article from the submit button
+  var thisId = $(this).attr("data-id");
+
+  // Run a POST request to change the note, using what's entered in the inputs
+  $.ajax({
+    method: "DELETE",
+    url: "/articles/" + thisId,
+    // data: {
+    //   // Value taken from title input
+    //   title: $("#titleinput").val(),
+    //   // Value taken from note textarea
+    //   body: $("#bodyinput").val()
+    // }
+  })
+    // With that done
+    .then(function (data) {
+      // Log the response
+      console.log("DELETED");
+      
+    });
+
+  // Also, remove the values entered in the input and textarea for note entry
+  // $("#titleinput").val("");
+  // $("#bodyinput").val("");
 });
