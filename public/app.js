@@ -6,14 +6,17 @@ $.getJSON("/articles", function(data) {
     // Display the apropos information on the page
     $("#articles").append("<p data-id='" + data[i]._id + "'>" + 
       data[i].title + "<br />" + 
-      "<a href=" + data[i].link + "> " + data[i].link + "</a> " + "</p>");
+      "<a href=" + data[i].link + "> " + data[i].link + "</a> " + "<br />" +
+      "<button class='btn' id='noteBtn' data-id=" + data[i]._id + ">Article Notes</button>" +
+      "<button class='btn' id='save'  data-id=" + data[i]._id + ">Save Article</button>" +
+      "<button class='btn' id='delete'  data-id=" + data[i]._id + ">Delete Article</button>" + "</p>");
   }
   console.log(data)
 });
 
 
 // Whenever someone clicks a p tag
-$(document).on("click", "p", function() {
+$(document).on("click", "#noteBtn", function() {
   // Empty the notes from the note section
   $("#notes").empty();
   // Save the id from the p tag
