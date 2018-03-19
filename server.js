@@ -86,20 +86,37 @@ app.get("/articles", function(req, res) {
     });
 });
 
-///////////////////////////Testing
-
 app.get("/saved", function (req, res) {
-  // Grab every document in the Articles collection
-  db.Article.find({})
+  db.Article.find({ "saved": true })   //.populate("notes")    //.exec(function (error, articles) {
     .then(function (dbArticle) {
+      console.log("hi");
       // If we were able to successfully find Articles, send them back to the client
       res.json(dbArticle);
     })
-    .catch(function (err) {
-      // If an error occurred, send it to the client
-      res.json(err);
-    });
+      .catch(function (err) {
+        // If an error occurred, send it to the client
+        res.json(err);
+      });
+    // var hbsObject = {
+    //   article: articles
+    // };
+    // res.render("saved", hbsObject);
+
 });
+///////////////////////////Testing
+
+// app.get("/saved", function (req, res) {
+//   // Grab every document in the Articles collection
+//   db.Article.find({})
+//     .then(function (dbArticle) {
+//       // If we were able to successfully find Articles, send them back to the client
+//       res.json(dbArticle);
+//     })
+//     .catch(function (err) {
+//       // If an error occurred, send it to the client
+//       res.json(err);
+//     });
+// });
 
 /////////////////////////////Testing
 // Route for grabbing a specific Article by id, populate it with it's note

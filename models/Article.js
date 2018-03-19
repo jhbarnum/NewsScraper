@@ -20,6 +20,11 @@ var ArticleSchema = new Schema({
     unique: true
    },
 
+  saved: {
+    type: Boolean,
+    default: false
+  },
+
   // status: {
   //   saved: false,
   // },

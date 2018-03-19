@@ -85,17 +85,17 @@ $(document).on("click", "#save", function () {
 
   // Run a POST request to change the note, using what's entered in the inputs
   $.ajax({
-    method: "PATCH",
-    url: "/articles/" + thisId,
+    method: "POST",
+    url: "/saved/" + thisId,
     
-    data: {
-      // Value taken from title input
-      title: $("#titleinput").val(),
-      // Value taken from note textarea
-      body: $("#bodyinput").val(),
+    // data: {
+    //   // Value taken from title input
+    //   title: $("#titleinput").val(),
+    //   // Value taken from note textarea
+    //   body: $("#bodyinput").val(),
 
-    },
-    //db.students.update({ name: "Steve" }, { $push: { "hobbies": "Extreme Basketweaving" } })
+    // },
+    
   })
     // With that done
     .then(function (data) {
@@ -104,10 +104,10 @@ $(document).on("click", "#save", function () {
       // Empty the notes section
       // $("#notes").empty();
     });
-
+  
   // Also, remove the values entered in the input and textarea for note entry
-  $("#titleinput").val("");
-  $("#bodyinput").val("");
+  // $("#titleinput").val("");
+  // $("#bodyinput").val("");
 });
 
 $(document).on("click", "#delete", function () {

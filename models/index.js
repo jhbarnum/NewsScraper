@@ -3,5 +3,5 @@
 module.exports = {
   Article: require("./Article"),
   Note: require("./Note"),
-  Status: require("./Status")
+  // Status: require("./Status")
 };
