@@ -88,49 +88,34 @@ $(document).on("click", "#save", function () {
     method: "POST",
     url: "/saved/" + thisId,
     
-    // data: {
-    //   // Value taken from title input
-    //   title: $("#titleinput").val(),
-    //   // Value taken from note textarea
-    //   body: $("#bodyinput").val(),
-
-    // },
-    
   })
-    // With that done
     .then(function (data) {
       // Log the response
       console.log(data);
-      // Empty the notes section
-      // $("#notes").empty();
     });
-  
-  // Also, remove the values entered in the input and textarea for note entry
-  // $("#titleinput").val("");
-  // $("#bodyinput").val("");
+
 });
 
 $(document).on("click", "#delete", function () {
-  // Grab the id associated with the article from the submit button
   var thisId = $(this).attr("data-id");
   console.log("DELETED");
   window.location.reload();
-  // Run a POST request to change the note, using what's entered in the inputs
   $.ajax({
     method: "DELETE",
-    url: "/articles/" + thisId,
-    
-  })
-   
-    .then(function (data) {
-      // Log the response
-      
-     
-      
-      
+    url: "/articles/" + thisId, 
+  }) 
+    .then(function (data) {   
     });
-
-  // Also, remove the values entered in the input and textarea for note entry
-  // $("#titleinput").val("");
-  // $("#bodyinput").val("");
 });
+
+
+// $(document).on("click", "#scrape-new", function () {
+//   console.log("hip")
+//   window.location.reload();
+//   $.ajax({
+//     method: "GET",
+//     url: "/scrape/",
+//   })
+//     .then(function (data) {
+//     });
+// });
