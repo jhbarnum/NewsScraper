@@ -80,6 +80,7 @@ $(document).on("click", "#savenote", function() {
 });
 
 $(document).on("click", "#save", function () {
+  window.location.reload();
   // Grab the id associated with the article from the submit button
   var thisId = $(this).attr("data-id");
 
@@ -109,18 +110,10 @@ $(document).on("click", "#delete", function () {
 });
 
 
-// $(document).on("click", "#scrape-new", function () {
-//   console.log("hip")
-//   window.location.reload();
-//   $.ajax({
-//     method: "GET",
-//     url: "/scrape/",
-//   })
-//     .then(function (data) {
-//     });
-// });
+
 
 $.getJSON("/saved", function (data) {
+  
   // For each one
   for (var i = 0; i < data.length; i++) {
 
